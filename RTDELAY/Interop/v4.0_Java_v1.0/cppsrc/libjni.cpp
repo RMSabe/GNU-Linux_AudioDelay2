@@ -258,12 +258,12 @@ static jstring libjni_tstr_to_jstr(JNIEnv *p_jnienv, const __tchar_t *tstr)
 #ifdef __TEXTFORMAT_USE_WCHAR
 
 #if __SIZEOF_WCHAR_T__ == 4
-	cstr_copy_text32_to_text16((const uint32_t*) tstr, _jstr_textbuf, TEXTBUF_SIZE_CHARS);
+	cstr_copy_text32_to_text16((const uint32_t*) tstr, _jchar_textbuf, TEXTBUF_SIZE_CHARS);
 
 	_len = 0u;
-	while(_jstr_textbuf[_len] != '\0') _len++;
+	while(_jchar_textbuf[_len] != '\0') _len++;
 
-	return p_jnienv->NewString((const jchar*) _jstr_textbuf, (jsize) _len);
+	return p_jnienv->NewString((const jchar*) _jchar_textbuf, (jsize) _len);
 #endif
 
 #if __SIZEOF_WCHAR_T__ == 2
