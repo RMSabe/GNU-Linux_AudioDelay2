@@ -12,6 +12,7 @@
 #include "globldef.h"
 #include "filedef.h"
 #include "delay.h"
+#include "cstrdef.h"
 #include "strdef.hpp"
 
 #include "shared.hpp"
